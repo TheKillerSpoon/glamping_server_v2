@@ -1,0 +1,224 @@
+{
+	"info": {
+		"_postman_id": "11df09d4-9739-4c4c-a056-00af3971a8a8",
+		"name": "glampingServer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44345125",
+		"_collection_link": "https://silke-3653417.postman.co/workspace/Silke's-Workspace~56636df2-a716-455d-807f-9ddea5c6daa6/collection/44345125-11df09d4-9739-4c4c-a056-00af3971a8a8?action=share&source=collection_link&creator=44345125"
+	},
+	"item": [
+		{
+			"name": "POST",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3043/product",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3043",
+					"path": [
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get alle",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3043/activities",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3043",
+					"path": [
+						"activities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3042/product/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3042",
+					"path": [
+						"product",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3042/product/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3042",
+					"path": [
+						"product",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Opdate",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3043/product",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3043",
+					"path": [
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "reviewPOST",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "review",
+							"value": "det er godt alt :)",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "luna",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "26",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/Elev/Pictures/Screenshots/Skærmbillede 2025-04-07 112020.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3042/review",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3042",
+					"path": [
+						"review"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "activtyPOST",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "en drømme",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "en god nat",
+							"type": "text"
+						},
+						{
+							"key": "weekday",
+							"value": "torsdag",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/Elev/Pictures/Screenshots/Skærmbillede 2025-01-28 095806.png"
+						},
+						{
+							"key": "time",
+							"value": "03:00",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3042/activty",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3042",
+					"path": [
+						"activty"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "userPOST",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://localhost:3043/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3043",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
