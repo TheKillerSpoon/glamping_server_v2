@@ -5,7 +5,7 @@ import {
   getUsers,
   getUsersById,
   updateUser,
-  deletedUser,
+  deleteUser,
 } from "../handlers/user.handler.js";
 
 const UserRoute = express.Router();
@@ -158,7 +158,7 @@ UserRoute.delete("/user/:id", async (req, res) => {
         message: "User ID mangler!",
       });
     }
-    const result = await deletedUser(id);
+    const result = await deleteUser(id);
 
     return res.status(200).send({
       status: "ok",
@@ -177,4 +177,4 @@ UserRoute.delete("/user/:id", async (req, res) => {
   }
 });
 
-export default productRoute;
+export default UserRoute;

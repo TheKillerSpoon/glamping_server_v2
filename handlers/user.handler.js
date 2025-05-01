@@ -1,5 +1,6 @@
-import dbConnect from "../../dbConnect.js";
-import userModel from "../../models/user.model.js";
+
+import dbConnect from "../dbConnect.js";
+import userModel from "../models/user.model.js";
 
 //Get all users 
 export const getUsers = async () => {
