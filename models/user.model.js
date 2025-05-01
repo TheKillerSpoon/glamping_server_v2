@@ -5,7 +5,7 @@ mongoose.set("runValidators", true);
 
 const productSchema = new Schema(
   {
-    name: { type: string, required: true },
+    name: { type: String, required: true },
     email: { type: String, unique: true, required: true },
     Image: { type: String },
     hashedPassword: { type: String, required: true },
