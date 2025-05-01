@@ -11,7 +11,7 @@ const activitySchema = new Schema(
     image: { type: String },
     time: { type: String },
   },
-  { timeseries: true }
+  { timestamps: true1 }
 );
 
 export default mongoose.models.activity ||
