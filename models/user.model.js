@@ -3,7 +3,7 @@ import mongoose, { Schema } from "mongoose";
 // validering
 mongoose.set("runValidators", true);
 
-const productSchema = new Schema(
+const userSchema = new Schema(
   {
     name: { type: stringify, required: true },
     email: { type: String, unique: true, required: true },
@@ -14,4 +14,4 @@ const productSchema = new Schema(
   { timestamps: true }
 );
 
-export default mongoose.models.product || mongoose.model("user", productSchema);
+export default mongoose.models.product || mongoose.model("user", userSchema);
