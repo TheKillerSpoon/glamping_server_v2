@@ -12,7 +12,7 @@ const productSchema = new Schema(
     image: { type: String },
     category: { type: String },
   },
-  { timeseries: true }
+  { timestamps: true }
 );
 
 export default mongoose.models.product ||

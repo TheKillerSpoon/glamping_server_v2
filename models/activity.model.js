@@ -10,7 +10,6 @@ const activitySchema = new Schema(
     weekday: { type: String },
     image: { type: String },
     time: { type: String },
-
   },
   { timeseries: false }
 );
