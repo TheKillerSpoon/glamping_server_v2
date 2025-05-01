@@ -12,7 +12,7 @@ const activitySchema = new Schema(
     time: { type: String },
 
   },
-  { timeseries: true }
+  { timeseries: false }
 );
 
 export default mongoose.models.activity ||
