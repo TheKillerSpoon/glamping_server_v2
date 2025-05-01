@@ -59,7 +59,7 @@ export const deleteUser = async (id) => {
 
 
 // Get by ID
-export const getUserById = async (id) => {
+export const getUsersById = async (id) => {
   try {
     await dbConnect(); // Ensure the database connection is established
     const user = await userModel.findById(id);
