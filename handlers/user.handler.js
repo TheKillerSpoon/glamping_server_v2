@@ -1,5 +1,6 @@
-import dbConnect from "../../dbConnect.js";
-import userModel from "../../models/user.model.js";
+
+import dbConnect from "../dbConnect.js";
+import userModel from "../models/user.model.js";
 
 //Get all users 
 export const getUsers = async () => {
@@ -57,13 +58,12 @@ export const deleteUser = async (id) => {
   }
 };
 
-
 // Get by ID
 export const getUsersById = async (id) => {
   try {
     await dbConnect(); // Ensure the database connection is established
     const user = await userModel.findById(id);
-    return usert;
+    return user;
   } catch (error) {
     throw new Error("Der skete en fejl", error); // Throwing: stop alt og smid fejlen videre til route
   }

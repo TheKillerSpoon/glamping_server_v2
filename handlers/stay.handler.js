@@ -11,6 +11,7 @@ export const getProducts = async () => {
     throw new Error("Der skete en fejl:");
   }
 };
+
 // create
 export const createProduct = async (body) => {
  
@@ -37,6 +38,7 @@ export const getProductsById = async (id) => {
     throw new Error("Der skete en fejl:", error);
   }
 };
+
 // Update
 export const updateProduct = async (body) => {
   try {
