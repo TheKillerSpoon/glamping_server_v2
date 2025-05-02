@@ -1,14 +1,14 @@
 Del 1 – backend og authitficering
 
-Hvad er formålet med auth.route.js
+1 Hvad er formålet med auth.route.js
 
 Den poster login data, eller definerer en API-endpoint som mådtager loginoplysninger, kalder en login funtion og retunere enten sucess eller fejlbesked
 
-Hvad gør funktionen signInUser i authInUser i auth.handler.js
+2 Hvad gør funktionen signInUser i authInUser i auth.handler.js
 
 SignInUser funktionen tjekker om de indsente login-oplysninger er korrekte
 
-Hvorfor bruger vi bcryptjs til adgangskoder, og hvad er forskellen på en hash og en almindelig tekstreng?
+3 Hvorfor bruger vi bcryptjs til adgangskoder, og hvad er forskellen på en hash og en almindelig tekstreng?
 
 Bcryptjs burger man til adgnangskoder for at beskytte brugerens data og gøre det meget svært for angribere at aflæse elelr gætte koder selv hvis de får adgang til databasen.
 
@@ -16,7 +16,7 @@ Almidelig tekst: det er læsbart fx. “minKode123” den er vendbar men har ing
 
 Hash: den er uforståelig fx “$2a$10$Xz” den er ikke vendbar men har dermed høj sikkerhed og er god til sikker lagring af adgangskoder
 
-Hvad indeholder den JWT-token, der sendes tilbage til klienten?
+4 Hvad indeholder den JWT-token, der sendes tilbage til klienten?
 
 Hvis man skal ind på et bibliotek får man et adgangkort som man bruger til at gå ind og ud uden at vise ID. Det adgangskort (JWT-Token) indeholder informattioner om dig fx Din email bruger id rolle osv... JWT-tokenen er underskrevet med hemmelig kode som kun serveren kender, og dermed erfter du er logget ind i en hjemmeside så gemmer den JWT token til localStorage, så når du besøger andre sider sender du tokenen med så den ved hvem du er uden at behøve at logge ind igen.
 
@@ -32,11 +32,11 @@ Tokenen er delt ud i 3 dele adskilt af punktummer xxxxx.yyyyy.zzzzz
 
 3. Signature. dette angiver om den er ægte. Den laved ved at tage hedar + payload og kombinere det til en hemmelig nøgle som gøre det umuligt at ændre n oget uden at signaturen blver ugyldig som fx “S4md93kfaas9diw39dsfl...”
 
-Hvorfor bruger vi en try/catch-blok i signInUser-funktionen?
+5 Hvorfor bruger vi en try/catch-blok i signInUser-funktionen?
 
 For at fange fejl så programmet ikke crasher og så kan sende en kontrolleret fejlbesked tilbage til klienten.
 
-Hvad sker der, hvis process.envJWT_SECRET ikke er defineret?
+6 Hvad sker der, hvis process.envJWT_SECRET ikke er defineret?
 
 Typisk sker der en JWT-signering fejl eller en JWT-verifikation fejl. JWT_SECRET er vigtigt fordi den er det eneste der kan underskrive og bekræte tokenens ægthed, uden den kan du hverken lave eller læse tokens korrekt
 
@@ -46,7 +46,7 @@ Error: secretoOrPrivateKey must have a value
 
 Del 2 – React-hooken useAuth
 
-Hvad er formålet med useAuth-hooken?
+7 Hvad er formålet med useAuth-hooken?
 
 UseAuth er en custon react hook, der giver adgang tl brugerens login-status og data.
 
@@ -60,21 +60,21 @@ Give adgang til login/logout-funktioner
 
 Bestykke sider eller funktioner, så kun loggede brugere ser dem
 
-Hvordan gemmes token og brugerdata, så de overlever en opdaterikng/genindlæsning af siden?
+8 Hvordan gemmes token og brugerdata, så de overlever en opdaterikng/genindlæsning af siden?
 
 Er forklaret før. Men den kan også gemmes i sessionStorage og Cookies istedet for localStorage, det er bare oftest brugt
 
-Hvordan ved app’en, om brugeren er logget ind? Hvilken variabel afgør det?
+9 Hvordan ved app’en, om brugeren er logget ind? Hvilken variabel afgør det?
 
 Det gør den i den kode som typisk var gemt i localStorage, så hvis man allerade er logget ind er der jo en JWT-token. Det er variablen status der viser, om login lykkedes (“ok” eller “error”)
 
-Hvorfor bruger vi jwt-decode, og hvad bruger vi det til?
+10 Hvorfor bruger vi jwt-decode, og hvad bruger vi det til?
 
 Også noget omkring de der Header Payload Signature
 
 Men den udpakker payload’en i tokenen så du kan læse indholdet direkte. Det bliver brugt til at vise brugerens navn eller rolle direkte i UI’et, man kan styre adgang, og man slipper for et ekstra API-kald for at hente basisoplysninger om brugeren.
 
-Forklar hvad signIn()-funktionen gør trin for trin.
+11 Forklar hvad signIn()-funktionen gør trin for trin.
 
 Opretter forbindelse til dataabasen
 
@@ -94,7 +94,7 @@ Fejl-håndtering
 
 Del 3 – Brug af login komponent
 
-Hvordan bruges useAuth-hooken i Login.jsx
+12 Hvordan bruges useAuth-hooken i Login.jsx
 
 Den bruges til at:
 
@@ -104,7 +104,7 @@ Modtager svar fra serveren
 
 Logger det i console.log(“Login successful”, data);
 
-Hvad sker der, når brugeren klikker på knappen “Log ind”?
+13 Hvad sker der, når brugeren klikker på knappen “Log ind”?
 
 Formen bliver sendt
 
@@ -116,24 +116,24 @@ Hvis sucsess kommer man ind
 
 Hvis login mislykkes: kommer der en fejlmeddelelse
 
-Hvordan vises fejl for brugeren, hvis login fejler?
+14 Hvordan vises fejl for brugeren, hvis login fejler?
 
 Der kommer en alert() som er en popup. Og der ankommer en fejlmddelelse logget i konsollen
 
 Del 4 – refleksion og samarbejde
 
-Hvilke dele af login-flowet forstod i bedst?
+15 Hvilke dele af login-flowet forstod i bedst?
 
 Vi har ikke fået det til at fungere så det kan vi ikke svare på, udaterer senere :P
 
-Var der noget, i syntes var svært - og hvordan løste i det?
+16 Var der noget, i syntes var svært - og hvordan løste i det?
 
 Det hele var udfordrende, men det om tosdagen vafr rimelig okay.
 
-Hvordan fordelte i arbejdet i gruppen?
+17 Hvordan fordelte i arbejdet i gruppen?
 
 Silke tog styringen og vi arbejde rimelig fordelt.
 
-Hvordan kunne i bruge dette login-system i et større projekt, fx med brugerroller eller adgangbegrænsende sider?
+18 Hvordan kunne i bruge dette login-system i et større projekt, fx med brugerroller eller adgangbegrænsende sider?
 
 Den kan man næsten bruge til at der har med et system man skal logge ind til. Alt man skal kunne logge ind til. Meget smart at ha lært :)
